@@ -5,7 +5,8 @@ import SwiperCore, { Navigation, Pagination,History } from 'swiper';
 SwiperCore.use([Navigation,Pagination,History]);
 
 export default function SliderContinents() {
-    const [isLargerThan500] = useMediaQuery('(min-width: 715px)')
+
+    const [isLargerThan715] = useMediaQuery('(min-width: 715px)')
 
     return (
         <>
@@ -21,8 +22,7 @@ export default function SliderContinents() {
                 navigation={true} 
                 pagination={true}
                 scrollbar={true}
-                className={isLargerThan500 ? "wilde" : "mobile"}
-                
+                className={!isLargerThan715 && "mobile"}                
             >
                     <SwiperSlide>
                         <Center  
@@ -43,60 +43,60 @@ export default function SliderContinents() {
                         <Center  
                             width='1240px' 
                             height={{ base: '250px', md: "450px" }}
-                            bgImage="url('/franca.jpg')"
+                            bgImage="url('/africa.jpg')"
                             bgSize="cover"
                             bgPosition="center"
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
                         >                            
-                            <Heading fontSize="48px" fontWeight="semibold">Europa</Heading>                           
-                            <Heading fontSize="24px" fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">Africa</Heading>                           
+                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
                         </Center>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Center  
                             width='1240px' 
                             height={{ base: '250px', md: "450px" }}
-                            bgImage="url('/franca.jpg')"
+                            bgImage="url('/asia.jpg')"
                             bgSize="cover"
                             bgPosition="center"
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
                         >                            
-                            <Heading fontSize="48px" fontWeight="semibold">Europa</Heading>                           
-                            <Heading fontSize="24px" fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">Ásia</Heading>                           
+                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
                         </Center>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Center  
                             width='1240px' 
                             height={{ base: '250px', md: "450px" }}
-                            bgImage="url('/franca.jpg')"
+                            bgImage="url('/oceania.jpg')"
                             bgSize="cover"
                             bgPosition="center"
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
                         >                            
-                            <Heading fontSize="48px" fontWeight="semibold">Europa</Heading>                           
-                            <Heading fontSize="24px" fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">Oceania</Heading>                           
+                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
                         </Center>
                     </SwiperSlide>
                     <SwiperSlide>
                         <Center  
                             width='1240px' 
                             height={{ base: '250px', md: "450px" }}
-                            bgImage="url('/franca.jpg')"
+                            bgImage="url('/america.jpg')"
                             bgSize="cover"
                             bgPosition="center"
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
                         >                            
-                            <Heading fontSize="48px" fontWeight="semibold">Europa</Heading>                           
-                            <Heading fontSize="24px" fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">América</Heading>                           
+                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
                         </Center>
                     </SwiperSlide>
                 </Swiper>
