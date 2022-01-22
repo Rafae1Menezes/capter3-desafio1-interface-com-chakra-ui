@@ -1,6 +1,29 @@
 import { Box, Container, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 
-export default function InfoContinent() {
+type Cidade = {
+    foto: string,
+    icon: string,
+    cidade: string,
+    pais: string,
+}
+
+interface Continent {
+    titulo: string
+    subtitulo: string
+    texto: string
+    paises: string
+    linguas: string
+    cidadesqnt: string
+    fotobanner: string
+    fotoslider: string
+    cidades: Cidade[]
+}
+
+interface InfoContinentProps{
+    continent: Continent
+}
+
+export default function InfoContinent({continent}:InfoContinentProps) {
     return (
         <Container maxWidth="1160px" mt={{ base: "24px", lg: "80px" }} mb={{ base: "32px", lg: "80px" }}>
             <Stack gap="70px" direction={{ base: "column", lg: "row" }} alignItems="center" rowGap="16px">
@@ -11,21 +34,21 @@ export default function InfoContinent() {
                     color="gray.900"
                     textAlign="justify"
                 >
-                    A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
+                    {continent.texto}
                 </Text>
                 <Box>
 
                     <HStack justifyContent="space-between" columnGap="48px">
                         <VStack>
-                            <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">50</Text>
+                            <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">{continent.paises}</Text>
                             <Text fontSize={{ base: '18px', lg: '24px' }} fontWeight="medium" color="gray.900" lineHeight="1">países</Text>
                         </VStack>
                         <VStack>
-                            <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">60</Text>
+                            <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">{continent.linguas}</Text>
                             <Text fontSize={{ base: '18px', lg: '24px' }} fontWeight="medium" color="gray.900" lineHeight="1">línguas</Text>
                         </VStack>
                         <VStack>
-                            <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">27</Text>
+                            <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">{continent.cidadesqnt}</Text>
                             <Text fontSize={{ base: '18px', lg: '24px' }} fontWeight="medium" color="gray.900" lineHeight="1" width={{ base: '120px', lg: '160px' }}>cidades +100</Text>
                         </VStack>
                     </HStack>
