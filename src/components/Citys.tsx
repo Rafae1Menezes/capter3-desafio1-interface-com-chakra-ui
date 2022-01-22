@@ -12,7 +12,7 @@ export default function Citys() {
             >
                 Cidades +100
             </Heading>
-            <HStack justifyContent={{base: 'space-around', lg: 'space-between'}} wrap="wrap" rowGap={{base: '20px', lg:"48px"}} columnGap="30px">
+            <HStack justifyContent={{base: 'space-around', lg: 'space-between'}} wrap="wrap" rowGap={{base: '20px', lg:"48px"}} columnGap="20px">
                 <Card 
                     foto="/londres.jpg"
                     pais="Londres"
@@ -34,7 +34,7 @@ export default function Citys() {
                 <Card 
                     foto="/praga.jpg"
                     pais="República Tcheca  "
-                    cidade="Reino Unido"
+                    cidade="Praga"
                     icone="/praga-icon.png"
                 />
                 <Card 

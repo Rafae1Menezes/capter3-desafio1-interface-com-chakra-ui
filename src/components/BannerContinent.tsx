@@ -5,7 +5,7 @@ export default function BannerContinent() {
 
     return (
         <Box
-            backgroundImage="url('./europabanner.jpg')"
+            backgroundImage="url('/europabanner.jpg')"
             backgroundSize="cover"
             backgroundPosition="bottom"
             height="500px"

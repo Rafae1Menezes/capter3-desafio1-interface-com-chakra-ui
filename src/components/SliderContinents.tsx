@@ -1,8 +1,9 @@
 import { Box, Center, Container, Heading, Image, Text, useMediaQuery } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination,History } from 'swiper';
+import SwiperCore, { Navigation, Pagination, History } from 'swiper';
+import Link from "next/link";
 
-SwiperCore.use([Navigation,Pagination,History]);
+SwiperCore.use([Navigation, Pagination, History]);
 
 export default function SliderContinents() {
 
@@ -15,18 +16,18 @@ export default function SliderContinents() {
                 Então escolha seu continente
             </Heading>
 
-            <Container maxW='1240px' p={0}  mb={{ base: '24px', md: "40px" }} >
-            <Swiper 
-                spaceBetween={3} 
-                slidesPerView={1} 
-                navigation={true} 
-                pagination={true}
-                scrollbar={true}
-                className={!isLargerThan715 && "mobile"}                
-            >
+            <Container maxW='1240px' p={0} mb={{ base: '24px', md: "40px" }} >
+                <Swiper
+                    spaceBetween={3}
+                    slidesPerView={1}
+                    navigation={true}
+                    pagination={true}
+                    scrollbar={true}
+                    className={!isLargerThan715 && "mobile"}
+                >
                     <SwiperSlide>
-                        <Center  
-                            width='1240px' 
+                        <Center
+                            width='1240px'
                             height={{ base: '250px', md: "450px" }}
                             bgImage="url('/europa.jpg')"
                             bgSize="cover"
@@ -34,14 +35,18 @@ export default function SliderContinents() {
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
-                        >                            
-                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">Europa</Heading>                           
-                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                        >
+                            <Link href="/continent/europa">
+                                <a>
+                                    <Heading fontSize={{ base: '24px', md: "48px" }} fontWeight="semibold">Europa</Heading>
+                                    <Heading fontSize={{ base: '14px', md: "24px" }} fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                                </a>
+                            </Link>
                         </Center>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Center  
-                            width='1240px' 
+                        <Center
+                            width='1240px'
                             height={{ base: '250px', md: "450px" }}
                             bgImage="url('/africa.jpg')"
                             bgSize="cover"
@@ -49,14 +54,18 @@ export default function SliderContinents() {
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
-                        >                            
-                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">Africa</Heading>                           
-                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                        >
+                            <Link href="/continent/africa">
+                                <a>
+                                    <Heading fontSize={{ base: '24px', md: "48px" }} fontWeight="semibold">Africa</Heading>
+                                    <Heading fontSize={{ base: '14px', md: "24px" }} fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                                </a>
+                            </Link>
                         </Center>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Center  
-                            width='1240px' 
+                        <Center
+                            width='1240px'
                             height={{ base: '250px', md: "450px" }}
                             bgImage="url('/asia.jpg')"
                             bgSize="cover"
@@ -64,14 +73,18 @@ export default function SliderContinents() {
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
-                        >                            
-                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">Ásia</Heading>                           
-                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                        >
+                            <Link href="/continent/asia">
+                                <a>
+                                    <Heading fontSize={{ base: '24px', md: "48px" }} fontWeight="semibold">Ásia</Heading>
+                                    <Heading fontSize={{ base: '14px', md: "24px" }} fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                                </a>
+                            </Link>
                         </Center>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Center  
-                            width='1240px' 
+                        <Center
+                            width='1240px'
                             height={{ base: '250px', md: "450px" }}
                             bgImage="url('/oceania.jpg')"
                             bgSize="cover"
@@ -79,14 +92,18 @@ export default function SliderContinents() {
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
-                        >                            
-                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">Oceania</Heading>                           
-                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                        >
+                            <Link href="/continent/oceania">
+                                <a>
+                                    <Heading fontSize={{ base: '24px', md: "48px" }} fontWeight="semibold">Oceania</Heading>
+                                    <Heading fontSize={{ base: '14px', md: "24px" }} fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                                </a>
+                            </Link>
                         </Center>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Center  
-                            width='1240px' 
+                        <Center
+                            width='1240px'
                             height={{ base: '250px', md: "450px" }}
                             bgImage="url('/america.jpg')"
                             bgSize="cover"
@@ -94,14 +111,18 @@ export default function SliderContinents() {
                             bgRepeat="no-repeat"
                             color="gray.100"
                             flexDir="column"
-                        >                            
-                            <Heading fontSize={{ base: '24px', md: "48px" }}  fontWeight="semibold">América</Heading>                           
-                            <Heading fontSize={{ base: '14px', md: "24px" }}  fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                        >
+                            <Link href="/continent/america">
+                                <a>
+                                    <Heading fontSize={{ base: '24px', md: "48px" }} fontWeight="semibold">América</Heading>
+                                    <Heading fontSize={{ base: '14px', md: "24px" }} fontWeight="semibold" mt="16px">O continente mais antigo.</Heading>
+                                </a>
+                            </Link>
                         </Center>
                     </SwiperSlide>
                 </Swiper>
             </Container>
-            
+
         </>
     )
 }
