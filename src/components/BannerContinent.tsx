@@ -1,6 +1,10 @@
 import { Box, Center, Container, Heading, useMediaQuery } from "@chakra-ui/react";
 
-export default function BannerContinent() {
+interface BannerContinentProps {
+    titulo: string
+}
+
+export default function BannerContinent({ titulo }: BannerContinentProps) {
     const [isLargerThan715] = useMediaQuery('(min-width: 715px)')
 
     return (
@@ -21,7 +25,7 @@ export default function BannerContinent() {
                             position="absolute"
                             bottom="59px"
                         >
-                            Europa
+                            {titulo}
                         </Heading>
                         : <Center height="100%">
                             <Heading
@@ -29,7 +33,7 @@ export default function BannerContinent() {
                             fontSize="28px"
                             fontWeight="semibold"
                         >
-                            Europa
+                            {titulo}
                         </Heading>
                         </Center>
 

@@ -1,7 +1,18 @@
 import { Container, Heading, HStack, Wrap } from "@chakra-ui/react";
 import Card from "./Card";
 
-export default function Citys() {
+type Cidade = {
+    foto: string,
+    icon: string,
+    cidade: string,
+    pais: string,
+}
+
+interface CitysProps {
+    cidades: Cidade[]
+}
+
+export default function Citys({ cidades }: CitysProps) {
     return (
         <Container maxWidth="1160px" mb="35px">
             <Heading
@@ -13,36 +24,19 @@ export default function Citys() {
                 Cidades +100
             </Heading>
             <HStack justifyContent={{base: 'space-around', lg: 'space-between'}} wrap="wrap" rowGap={{base: '20px', lg:"48px"}} columnGap="20px">
-                <Card 
-                    foto="/londres.jpg"
-                    pais="Londres"
-                    cidade="Reino Unido"
-                    icone="/londres-icon.png"
-                />
-                <Card 
-                    foto="/paris.jpg"
-                    pais="França"
-                    cidade="París"
-                    icone="/paris-icon.png"
-                />
-                <Card 
-                    foto="/roma.jpg"
-                    pais="Itália"
-                    cidade="Roma"
-                    icone="/roma-icon.png"
-                />
-                <Card 
-                    foto="/praga.jpg"
-                    pais="República Tcheca  "
-                    cidade="Praga"
-                    icone="/praga-icon.png"
-                />
-                <Card 
-                    foto="/amsterdan.jpg"
-                    pais="Holanda"
-                    cidade="Amsterdã"
-                    icone="/amsterdan-icon.png"
-                />
+                {
+                    cidades.map(cidade => 
+                        (
+                            <Card
+                                key={cidade.cidade}
+                                foto={cidade.foto}
+                                pais={cidade.pais}
+                                cidade={cidade.cidade}
+                                icone={cidade.icon}
+                            />
+                        )
+                    )
+                }
             </HStack>
         </Container>
     )
