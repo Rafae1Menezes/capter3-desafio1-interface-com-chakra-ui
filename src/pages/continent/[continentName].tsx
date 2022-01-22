@@ -45,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async ({req, params}) => {
     const { continentName } = params
 
     const prismic = getPrismicClient(req)
-    const response = await prismic.getByUID('continent', String(continentName), {})
+    const response = await prismic.getByUID('continent', String(continentName), {}) as any
 
     const cidades = response.data.cidades.map(cidade => {
         return {
