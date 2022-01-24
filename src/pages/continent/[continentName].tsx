@@ -1,5 +1,5 @@
 import { Box, Container, HStack, Text, VStack } from "@chakra-ui/react";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { resolveHref } from "next/dist/shared/lib/router/router";
 import BannerContinent from "../../components/BannerContinent";
 import Citys from "../../components/Citys";
@@ -41,10 +41,17 @@ export default function Continent({ continent }:ContinentProps) {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({req, params}) => {
+export const getStaticPaths = () => {
+    return {
+       paths: [],
+       fallback: 'blocking',
+    }
+ }
+
+export const getStaticProps: GetStaticProps = async ({ params}) => {
     const { continentName } = params
 
-    const prismic = getPrismicClient(req)
+    const prismic = getPrismicClient()
     const response = await prismic.getByUID('continent', String(continentName), {}) as any
 
     const cidades = response.data.cidades.map(cidade => {
@@ -71,7 +78,8 @@ export const getServerSideProps: GetServerSideProps = async ({req, params}) => {
     return {
         props: {
             continent
-        }
+        },
+        revalidate: 60 * 60 * 24, // 24 hours
     }
 }
 

@@ -1,6 +1,6 @@
 import { Box, Center, Container, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { Image } from '@chakra-ui/react'
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import Prismic from '@prismicio/client'
 import Banner from "../components/Banner";
 import HeaderMain from "../components/HeaderMain";
@@ -33,9 +33,9 @@ export default function Home({slides}: HomeProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getStaticProps: GetStaticProps = async () => {
 
-  const prismic = getPrismicClient(req)
+  const prismic = getPrismicClient()
 
   const response = await prismic.query([ Prismic.predicates.at('document.type', 'continent') ], {}) as any
   const { results } =  response
@@ -52,6 +52,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   return {
     props: {
       slides
-    }
+    },
+    revalidate: 60 * 60 * 24, // 24 hours
   }
 }
