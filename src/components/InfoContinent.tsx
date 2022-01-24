@@ -38,7 +38,7 @@ export default function InfoContinent({continent}:InfoContinentProps) {
                 </Text>
                 <Box>
 
-                    <HStack justifyContent="space-between" columnGap="48px">
+                    <HStack justifyContent="space-between" columnGap={{ base: '24px', lg: '48px' }}>
                         <VStack>
                             <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">{continent.paises}</Text>
                             <Text fontSize={{ base: '18px', lg: '24px' }} fontWeight="medium" color="gray.900" lineHeight="1">países</Text>
