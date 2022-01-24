@@ -37,9 +37,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
   const prismic = getPrismicClient(req)
 
-  const response = await prismic.query([
-    Prismic.predicates.at('document.type', 'continent')
-  ], {})
+  const response = await prismic.query([ Prismic.predicates.at('document.type', 'continent') ], {}) as any
   const { results } =  response
 
   const slides: Slide[] = results.map(continent => (
