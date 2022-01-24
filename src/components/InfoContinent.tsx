@@ -49,7 +49,7 @@ export default function InfoContinent({continent}:InfoContinentProps) {
                         </VStack>
                         <VStack>
                             <Text fontSize={{ base: '24px', lg: '48px' }} fontWeight="medium" color="yellow" lineHeight="1">{continent.cidadesqnt}</Text>
-                            <Text fontSize={{ base: '18px', lg: '24px' }} fontWeight="medium" color="gray.900" lineHeight="1" width={{ base: '120px', lg: '200px' }}>
+                            <Text fontSize={{ base: '18px', lg: '24px' }} fontWeight="medium" color="gray.900" lineHeight="1" width={{ base: '160px', lg: '200px' }}>
                                 cidades +100
                                 <Tooltip hasArrow label='De acordo com Visual Capitalist'  bg='gray.200' color='gray.900'>
                                     <Image src="/Info.svg" alt="info" ml="10px" display="inline-block" w="16px" h="16px" />
