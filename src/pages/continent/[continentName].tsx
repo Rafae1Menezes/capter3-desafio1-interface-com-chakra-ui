@@ -33,8 +33,8 @@ interface ContinentProps {
 export default function Continent({ continent }:ContinentProps) {
     return (
         <>
-            <HeaderMain />
-            <BannerContinent titulo={continent.titulo} />
+            <HeaderMain withBackButton />
+            <BannerContinent titulo={continent.titulo} banner={continent.fotobanner} />
             <InfoContinent continent={continent} />
             <Citys cidades={continent.cidades} />  
         </>
